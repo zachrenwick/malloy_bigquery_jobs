@@ -22,3 +22,4 @@ tar -xf google-cloud-cli-394.0.0-linux-x86_64.tar.gz
 gcloud auth login --update-adc
 gcloud config set project {my_project_id} --installation
 ```
+More details on setup here: https://malloydata.github.io/documentation/setup/connection_instructions

@@ -1,1 +1,13 @@
-source: jobs_table is table('bigquery:job_views.info_schema_jobs')
+sql: my_sql_query is {
+  select: """
+    SELECT
+      *
+    FROM 'atz-data-selfserve-prd.`region-US`.INFORMATION_SCHEMA.JOBS'
+    LIMIT 10
+  """
+  connection: "bigquery"
+}
+
+source: bq_jobs is from_sql(my_sql_query) {
+  measure: job_count is count()
+}
