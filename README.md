@@ -11,6 +11,14 @@ Model for information_schema.jobs in bigquery.  To run this model, Modify the [j
 - create a fork
 - open the repo from GitHub codespaces
 - install gcloud cli into codespace:
+```
 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-394.0.0-linux-x86_64.tar.gz
 tar -xf google-cloud-cli-394.0.0-linux-x86_64.tar.gz
 ./google-cloud-sdk/install.sh
+```
+
+- run gcloud auth and set default BQ project:
+```
+gcloud auth login --update-adc
+gcloud config set project {my_project_id} --installation
+```
